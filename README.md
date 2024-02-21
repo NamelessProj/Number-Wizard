@@ -1,4 +1,4 @@
-[Live website]()
+[Live website](https://number-wizard.vercel.app/)
 
 # Wizzard Number
 
