@@ -45,41 +45,6 @@ p {
     text-wrap: pretty;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: middle;
-    font-style: italic;
-    background-repeat: no-repeat;
-    background-size: cover;
-    shape-margin: 1rem;
-}
-
-ul {
-    list-style: none;
-}
-
-.sr-only {
-    clip: rect(0 0 0 0);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-}
-
-
-/* ======== REDUCED MOTION: NO PREFERENCE ======== */
-
-@media (prefers-reduced-motion: no-preference) {
-    html,
-    :has(:target) {
-        scroll-behavior: smooth;
-    }
-}
-
 
 
 /* ======== CSS ======== */
@@ -123,6 +88,7 @@ input{
 
 button{
     background: var(--clr-200);
+    color: var(--clr-white);
     border: none;
     border-radius: 5px;
     padding: 8px 16px;
