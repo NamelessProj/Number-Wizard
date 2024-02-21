@@ -1,0 +1,179 @@
+:root{
+    --clr-200: #F27059;
+    --clr-300: #F4845F;
+    --clr-400: #F79D65;
+    --clr-600: #F7B267;
+
+    --clr-black: #101720;
+    --clr-white: #eee;
+
+    --clr-black-tr: rgb(16 23 32 / .95);
+
+    --fs-400: 18px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    hanging-punctuation: first last;
+    color-scheme: dark;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    color: var(--clr-white);
+    font-size: var(--fs-400);
+
+    background-attachment: fixed;
+    background-image: radial-gradient(color-mix(in oklab, var(--clr-black), var(--clr-white)), var(--clr-black));
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+p {
+    max-width: 75ch;
+    text-wrap: pretty;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.sr-only {
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+
+/* ======== REDUCED MOTION: NO PREFERENCE ======== */
+
+@media (prefers-reduced-motion: no-preference) {
+    html,
+    :has(:target) {
+        scroll-behavior: smooth;
+    }
+}
+
+
+
+/* ======== CSS ======== */
+
+
+main{
+    width: min(100% - 2rem, 1200px);
+    margin: 0 auto;
+    margin-block: 1rem;
+}
+
+h1,
+h2,
+h3{ text-align: center; }
+h1{
+    background: var(--clr-black);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: inset 4px 4px 8px #aaa, inset -4px -4px 8px #333, 8px 8px 60px #222;
+}
+h2,
+h3{ margin-bottom: .2rem; }
+h3{ margin-top: 2rem; }
+
+section{
+    background: var(--clr-black);
+    backdrop-filter: blur(5px) brightness(2);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 1.5rem;
+    box-shadow: inset 4px 4px 8px #aaa, inset -4px -4px 8px #333, 8px 8px 60px #222;
+}
+
+input{
+    border: none;
+    background: color-mix(in oklab, var(--clr-black) 20%, var(--clr-400));
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+button{
+    background: var(--clr-200);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: calc(var(--fs-400) + 2px);
+    font-weight: 700;
+    box-shadow: inset 0 5px 8px #ccc5, inset 0 -5px 8px #3335;
+}
+button:disabled{
+    background: color-mix(in oklab, var(--clr-200) 70%, var(--clr-black));
+    color: var(--clr-black);
+    cursor: default;
+}
+
+form div:has(label){
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+form > div:last-child,
+#operator,
+div:has(#numGuessComp){
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#operator{ margin-bottom: 2rem; }
+
+div:has(#numGuess){
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+#stats,
+#statsComp{ margin-top: 2rem; }
+
+#guessResult,
+#guessResultComp{
+     font-weight: 700;
+    margin-bottom: 2rem;
+}
+:is(#guessResult, #guessResultComp, #stats, #statsComp) p{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.stats span::before{
+    content: 'Turn: ';
+}

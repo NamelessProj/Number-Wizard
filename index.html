@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Can you guess the number?">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Number Wizzard</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/script.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Number Wizzard</h1>
+
+
+        <!-- ======== YOU TRY TO GUESS THE COMPUTER NUMBER ======== -->
+
+        <section>
+            <h2>Can you guess the number ?</h2>
+
+            <div id="stats" class="stats">
+                <p><span>0</span></p>
+            </div>
+
+            <div id="guessResult">
+                <p></p>
+            </div>
+
+            <form>
+                <div>
+                    <label>
+                        <span>Minimum value</span>
+                        <input type="text" name="minValue" id="minValue" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" inputmode="numeric" value="1">
+                    </label>
+                    <label>
+                        <span>Maximum value</span>
+                        <input type="text" name="maxValue" id="maxValue" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" inputmode="numeric" value="10">
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        <span>Your guess</span>
+                        <input type="text" name="numGuess" id="numGuess" inputmode="numeric"
+                               oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="1">
+                    </label>
+                </div>
+
+                <div>
+                    <button type="button" id="sendGuess">Make a guess</button>
+                    <button type="button" id="newGame">New Game</button>
+                </div>
+            </form>
+        </section>
+
+
+        <!-- ======== THE COMPUTER TRY TO GUESS YOUR NUMBER ======== -->
+
+        <section>
+            <h2>Can your computer guess your number ?</h2>
+
+            <div id="statsComp" class="stats">
+                <p><span>0</span></p>
+            </div>
+
+            <div id="guessResultComp">
+                <p></p>
+            </div>
+
+            <form>
+                <div>
+                    <label>
+                        <span>Minimum value</span>
+                        <input type="text" name="minValueComp" id="minValueComp" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" inputmode="numeric" value="1">
+                    </label>
+                    <label>
+                        <span>Maximum value</span>
+                        <input type="text" name="maxValueComp" id="maxValueComp" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" inputmode="numeric" value="10">
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        <span>Your number</span>
+                        <input type="text" name="numGuessComp" id="numGuessComp" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="1">
+                    </label>
+                </div>
+
+                <h3>My number is...</h3>
+                <div id="operator">
+                    <button type="button" id="plusButtonComp">Higher</button>
+                    <button type="button" id="minusButtonComp">Lower</button>
+                    <button type="button" id="rightNumber">This one</button>
+                </div>
+
+                <div>
+                    <button type="button" id="startButtonComp">Start the guessing</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
